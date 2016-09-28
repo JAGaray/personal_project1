@@ -11,13 +11,13 @@ int main()
 
         int replace_digit (int n, int digit, int new_digit);
         int get_digit (int n, int l);
-        int number_digits (int n);
-        int new_digit, number_of_digits, digit, n, m, l;
+        int number_digits (int n); 
+        int total, number, new_digit, number_of_digits, digit, n, m, l;
 
         cout << "Please give the number you'd like to change: " << endl;
         cin >> n;
 
-        while (n <= 0){
+        while (n <= 0){ 
                 cout << "Please enter a positive number!" << endl;
                 cin >> n;
                      }
@@ -40,6 +40,7 @@ int main()
                 }
         cout << "The number of digits is " << number_digits(n) << endl;
         cout << "The index digit is " << get_digit(n, l) << endl;
+        cout << number;
 
         return 0;
 
@@ -60,3 +61,18 @@ int number_digits(int n)
                 }
         return number_of_digits;
 }
+
+int replace_digit(int n, int digit, int new_digit)
+{
+        for (i = 0; i <= number_digits){
+        if (get_digit(i) == l){
+        total += new_digit**
+        }
+        else{
+        total += get_digit(i)*pow(number_digits-i)*10
+        total += new_digits*pow(number_digits-i)*10
+}
+
+}
+
+                                                                       85,0-1        Bot
