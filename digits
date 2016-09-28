@@ -3,21 +3,21 @@
 
 using namespace std;
 
+        int replace_digit(int n, int digit, int new_digit);
+        int get_digit(int n, int l);
+        int number_digits(int n);
+        int res, total, number, new_digit, number_of_digits, digit, n, m, l;
+
 int main()
 {
 
 //create a program that will replace a specific integer within a string
-//of numbers with another integer 
-
-        int replace_digit (int n, int digit, int new_digit);
-        int get_digit (int n, int l);
-        int number_digits (int n); 
-        int total, number, new_digit, number_of_digits, digit, n, m, l;
+//of numbers with another integer
 
         cout << "Please give the number you'd like to change: " << endl;
         cin >> n;
 
-        while (n <= 0){ 
+        while (n <= 0){
                 cout << "Please enter a positive number!" << endl;
                 cin >> n;
                      }
@@ -40,6 +40,7 @@ int main()
                 }
         cout << "The number of digits is " << number_digits(n) << endl;
         cout << "The index digit is " << get_digit(n, l) << endl;
+        number = replace_digit(n, digit, new_digit);
         cout << number;
 
         return 0;
@@ -71,6 +72,3 @@ int replace_digit(int n, int digit, int new_digit)
 
    return replace_digit(n/10, digit, new_digit)*10+digit;
 }
-
-
-                                                                       85,0-1        Bot
