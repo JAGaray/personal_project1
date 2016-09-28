@@ -11,13 +11,13 @@ int main()
 
         int replace_digit (int n, int digit, int new_digit);
         int get_digit (int n, int l);
-        int number_digits (int n); 
+        int number_digits (int n);
         int new_digit, number_of_digits, digit, n, m, l;
 
         cout << "Please give the number you'd like to change: " << endl;
         cin >> n;
 
-        while (n <= 0){ 
+        while (n <= 0){
                 cout << "Please enter a positive number!" << endl;
                 cin >> n;
                      }
@@ -38,10 +38,9 @@ int main()
                 cout << "Please enter a single digit positive number." << endl;
                 cin >> new_digit;
                 }
-
         cout << "The number of digits is " << number_digits(n) << endl;
         cout << "The index digit is " << get_digit(n, l) << endl;
-        
+
         return 0;
 
 }
@@ -60,4 +59,4 @@ int number_digits(int n)
                 number_of_digits++;
                 }
         return number_of_digits;
-}   
+}
