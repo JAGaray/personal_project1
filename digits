@@ -64,13 +64,14 @@ int number_digits(int n)
 
 int replace_digit(int n, int digit, int new_digit)
 {
-        for (i = 0; i <= number_digits){
-        if (get_digit(i) == l){
-        total += new_digit**
+        int i;
+        for (i = 0; i <= (int)number_digits; i++){
+        if  (get_digit(i)) == int l){
+        total += new_digit**;
         }
         else{
-        total += get_digit(i)*pow(number_digits-i)*10
-        total += new_digits*pow(number_digits-i)*10
+        total += get_digit(i)*pow(number_digits-i)*10;
+        total += new_digits*pow(number_digits-i)*10;
 }
 
 }
