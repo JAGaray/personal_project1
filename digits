@@ -41,8 +41,7 @@ int main()
 
         cout << "The number of digits is " << number_digits(n) << endl;
         cout << "The index digit is " << get_digit(n, l) << endl;
-        cout << "The new number is " << replace_digit(n, digit) << endl;
-
+        
         return 0;
 
 }
@@ -61,8 +60,4 @@ int number_digits(int n)
                 number_of_digits++;
                 }
         return number_of_digits;
-}
-
-int replace_digit (int n, int digit, int new_digit)
-{
-    
+}   
