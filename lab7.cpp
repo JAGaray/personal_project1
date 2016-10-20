@@ -1,14 +1,3 @@
-/*
-  Author: Alexey Nikolaev, 2015.
-          Modified by Subash Shankar on Oct 29, 2016.
-
-  Description:
-    The program read a PPM file from the standard input,
-    and outputs a modified PPM file through the standard output.
-
-*/
-
-
 #include <iostream>
 #include <cassert>
 #include <cstdlib>
