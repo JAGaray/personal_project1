@@ -73,6 +73,7 @@ int main() {
   int inImage[MAXWIDTH][MAXHEIGHT];
   int outImage[MAXWIDTH][MAXHEIGHT];
   int imageWidth, imageHeight;
+  int t1, t2;
 
   readImage(inImage, imageWidth, imageHeight);
 
@@ -87,4 +88,17 @@ int main() {
     };
   writeImage(outImage, imageWidth, imageHeight);
 
+  //get threshholds from user
+  cout << "Please enter your first threshhold (t1):" << endl;
+  cin >> t1;
+  cout << "Please enter the second threshhold (t2):" << endl;
+  cin >> t2;
+  //highlight the image
+  highlight(image, width, height, t1, t2);
+  //write the image
+  writeImage(image, width, height);
+
+  return 0;
+
 }
+
