@@ -4,11 +4,21 @@
 #include <sstream>
 #include <ostream>
 #include <fstream>
+#include <cmath>
 
 using namespace std;
 
 class PopularVoteData
 {
+    public:
+        friend find_obama_percent_per_state(int, int);
+        friend find_romney_percent_per_state(int, int);
+        friend istream &operator >> (istream &input, PopularVoteData &data)
+        {
+            input >> data.pop_obama >> data.pop_romney >> data.pop_other
+                  >> data.total_pop_vote;
+            getline(input, data.state_name);
+        }
     private:
         int pop_obama,
             pop_romney,
@@ -19,69 +29,22 @@ class PopularVoteData
             romney_running_count_total_pop_vote = 0,
             num_rows = 0;
         char buffer[1000];
-
-    friend istream &operator >> (istream &input, PopularVoteData &data);
-
+        string state_name;
+        double  obama_percent_per_state = 0;
+        double  romney_percent_per_state = 0;
 
 };
 
-istream &operator >> (istream &input, PopularVoteData &data)
+double find_romney_percent_per_state(int pop_romney, int total_pop_vote)
 {
-while (input.getline(buffer, 1000))
-  {
-    num_rows++;
-
-    istringstream buffer_stream(buffer);
-    buffer_stream >> pop_obama >> pop_romney >> pop_other >> total_pop_vote
-                  >> state_name;
-
-    running_count_total_pop_vote += total_pop_vote;
-    obama_running_count_total_pop_vote += pop_obama;
-    romney_running_count_total_pop_vote += pop_romney;
-
-    obama_percent_per_state = (double(pop_obama)/double(total_pop_vote))*100;
     romney_percent_per_state = (double(pop_romney)/double(total_pop_vote))*100;
-    state_margin_of_victory =  (obama_percent_per_state - romney_percent_per_state);
-    running_total_margin_victory += state_margin_of_victory;
+    return romney_percent_per_state;
+}
 
-    if (obama_best_margin < state_margin_of_victory){
-        obama_best_margin = state_margin_of_victory;
-        obama_best_state = state_name;
-      }
-
-    if (obama_worst_margin > state_margin_of_victory){
-        obama_worst_margin = state_margin_of_victory;
-        obama_worst_state = state_name;
-      }
-
-    if (romney_best_margin < state_margin_of_victory){
-       romney_best_margin = state_margin_of_victory;
-       romney_best_state = state_name;
-    }
-
-    if (romney_worst_margin > state_margin_of_victory){
-       romney_worst_margin = state_margin_of_victory;
-       romney_worst_state = state_name;
-    }
-
-    if (pop_obama > pop_romney)
-      obama_states += state_name + " ";
-    else
-      romney_states += state_name + " ";
-  }
-
-    highest_margin_victory = obama_best_margin;
-    lowest_margin_victory = obama_worst_margin;
-    average_victory_margin = ((running_total_margin_victory)/num_rows);
-
-    obama_percent_total_pop_vote =
-(double(obama_running_count_total_pop_vote)/double(running_count_total_pop_vote))*100;
-
-romney_percent_total_pop_vote =
-(double(romney_running_count_total_pop_vote)/double(running_count_total_pop_vote))*100;
-
-margin_of_victory = (obama_percent_total_pop_vote) -
-                    (romney_percent_total_pop_vote);
+double find_obama_percent_per_state(int pop_obama, int total_pop_vote)
+{
+   obama_percent_per_state = (double(pop_obama)/double(total_pop_vote))*100;
+   return obama_percent_per_state;
 }
 
 int main()
