@@ -27,7 +27,7 @@ class PopularVoteData
             running_count_total_pop_vote,
             obama_running_count_total_pop_vote,
             romney_running_count_total_pop_vote,
-            num_rows = 0;
+            num_rows;
         char buffer[1000];
         string state_name;
         double  obama_percent_per_state;
