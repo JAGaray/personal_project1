@@ -5,6 +5,7 @@
 #include <ostream>
 #include <fstream>
 #include <cmath>
+#include <ifstream>
 
 using namespace std;
 
