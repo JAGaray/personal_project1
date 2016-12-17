@@ -50,9 +50,9 @@ public:
 
 };
 
-class Someshit{
+class StateWinners{
     public:
-    Someshit(const char* filename){
+    StateWinners(const char* filename){
        ifstream input(filename);
        int i = 0;
        char buffer[1000];
@@ -192,9 +192,9 @@ struct electoralcollege{
     int votes;
     string name;
 };
-class Someothershit{
+class VoteData{
 public:
-    Someothershit(const char* filename){
+    VoteData(const char* filename){
        ifstream input(filename);
        int i = 0;
        char buffer[1000];
@@ -234,29 +234,29 @@ int main()
     int total_winning_electoral_votes;
     string winning_candidate, winner_best_state, winner_worst_state;
     double popular_vote_percentage, highest_margin_victory, lowest_margin_victory ;
-    Someshit shit("elect12.csv");
-    Someothershit othershit("ev10.csv");
-    
-    if (othershit.obama_votes(shit.obama_states()) > othershit.romney_votes(shit.romney_states())) {
-      total_winning_electoral_votes = othershit.obama_votes(shit.obama_states());
+    StateWinners winners("elect12.csv");
+    VoteData elect("ev10.csv");
+
+    if (elect.obama_votes(winners.obama_states()) > elect.romney_votes(winners.romney_states())) {
+      total_winning_electoral_votes = elect.obama_votes(winners.obama_states());
       winning_candidate = "Barack Hussein Obama";
-      winner_best_state = shit.get_obama_best_state();
-      winner_worst_state = shit.get_obama_worst_state();
-      popular_vote_percentage = shit.get_obama_percent_total_pop_vote();
-      highest_margin_victory = shit.get_obama_best_margin();
-      lowest_margin_victory = shit.get_obama_worst_margin();
+      winner_best_state = winners.get_obama_best_state();
+      winner_worst_state = winners.get_obama_worst_state();
+      popular_vote_percentage = winners.get_obama_percent_total_pop_vote();
+      highest_margin_victory = winners.get_obama_best_margin();
+      lowest_margin_victory = winners.get_obama_worst_margin();
     }
     else
     {
-      total_winning_electoral_votes = othershit.romney_votes(shit.romney_states());
+      total_winning_electoral_votes = elect.romney_votes(winners.romney_states());
       winning_candidate = "Willard Mitt Romney";
-      winner_best_state = shit.get_romney_best_state();
-      winner_worst_state = shit.get_romney_worst_state();
-      popular_vote_percentage = shit.get_romney_percent_total_pop_vote();
-      highest_margin_victory = shit.get_romney_best_margin();
-      lowest_margin_victory = shit.get_romney_worst_margin();
+      winner_best_state = winners.get_romney_best_state();
+      winner_worst_state = winners.get_romney_worst_state();
+      popular_vote_percentage = winners.get_romney_percent_total_pop_vote();
+      highest_margin_victory = winners.get_romney_best_margin();
+      lowest_margin_victory = winners.get_romney_worst_margin();
     }
-    if (othershit.obama_votes(shit.obama_states()) == othershit.romney_votes(shit.romney_states())) {
+    if (elect.obama_votes(winners.obama_states()) == elect.romney_votes(winners.romney_states())) {
       winning_candidate = "Barack Hussein Obama";
       cout << "The election resulted in a tie!" << endl;
      }
@@ -265,14 +265,14 @@ int main()
             << " won the national election with "
             << popular_vote_percentage
             << "% of the popular vote and a margin of  "
-            << shit.margin_of_victory()
+            << winners.margin_of_victory()
             << " points." << endl;
      }
 
   cout << winning_candidate << " received " << total_winning_electoral_votes
        << " electoral votes." << endl;
   cout << winning_candidate << " had an unweighted average victory margin of "
-       << shit.average_victory_margin() << " points.";
+       << winners.average_victory_margin() << " points.";
   cout << winning_candidate << " best state was " << winner_best_state
        << ", where he won by " << highest_margin_victory << " points." << endl;
   cout << winning_candidate << " worst state was " << winner_worst_state
