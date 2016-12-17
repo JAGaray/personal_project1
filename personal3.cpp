@@ -35,13 +35,13 @@ class PopularVoteData
 
 };
 
-double find_romney_percent_per_state(int pop_romney, int total_pop_vote)
+double PopularVoteData::find_romney_percent_per_state(int pop_romney, int total_pop_vote)
 {
     romney_percent_per_state = (double(pop_romney)/double(total_pop_vote))*100;
     return romney_percent_per_state;
 }
 
-double find_obama_percent_per_state(int pop_obama, int total_pop_vote)
+double PopularVoteData::find_obama_percent_per_state(int pop_obama, int total_pop_vote)
 {
    obama_percent_per_state = (double(pop_obama)/double(total_pop_vote))*100;
    return obama_percent_per_state;
