@@ -24,14 +24,14 @@ class PopularVoteData
             pop_romney,
             pop_other,
             total_pop_vote,
-            running_count_total_pop_vote = 0,
-            obama_running_count_total_pop_vote = 0,
-            romney_running_count_total_pop_vote = 0,
+            running_count_total_pop_vote,
+            obama_running_count_total_pop_vote,
+            romney_running_count_total_pop_vote,
             num_rows = 0;
         char buffer[1000];
         string state_name;
-        double  obama_percent_per_state = 0;
-        double  romney_percent_per_state = 0;
+        double  obama_percent_per_state;
+        double  romney_percent_per_state;
 
 };
 
