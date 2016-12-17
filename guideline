@@ -1,0 +1,18 @@
+Assignment:
+
+To do an object oriented implementation, you should first identify your ADTs. At a minimum, you should have the following ADTs:
+The electoral vote input file. This ADT should include as private data members all of the information in the input file. Note that you may have vectors/etc as elements of the class. You are required to have an overloaded >> function which inputs data from the file into this class. Alternatively, your class should have a constructor that takes a filename (string) as argument to initialize the members.
+The analog of the above for the election results input file.
+Any other ADTs you wish to have.
+Determine and implement suitable public and private functions for all classes. Note that you are NOT allowed to break the object oriented philosophy and access private members directly, and thus should have access/mutator functions for all relevant data. Although you have the choice of using a constructor or overloading >>, it is strongly suggested that you use a different approach for the 2 input files since you will need to know both. 
+
+Place each of the two required classes in their own files. You may choose to put additional classes in one file or by themselves, though a file that covers too many separate concerns is bad structure (also see grading below). Also write a makefile to create your executable file. 
+Task:
+
+Print the national results, along with the [unweighted] average margin of victory for the winner (P). For example (in a 3 state nation), if P had won the popular vote by 10, 20, and -15 points, P's average margin would be 5%. Also determine the states where P had the best and worst winning margins.
+Print a message to the screen as follows (N should be a double):
+P won the national election with N% of the popular vote and a margin of N points.
+P received N electoral votes.
+P had an unweighted average victory margin of N points. 
+P's best state was XX, where he won by N points.
+P's worst state was XX, where he lost by N points.
