@@ -11,8 +11,8 @@ using namespace std;
 class PopularVoteData
 {
     public:
-        friend double find_obama_percent_per_state(int, int);
-        friend double find_romney_percent_per_state(int, int);
+        double find_obama_percent_per_state(int, int);
+        double find_romney_percent_per_state(int, int);
         friend istream &operator >> (istream &input, PopularVoteData &data)
         {
             input >> data.pop_obama >> data.pop_romney >> data.pop_other
